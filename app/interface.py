@@ -27,16 +27,16 @@ class Interface:
 
         self.button_add = Button(self.root, text="+", padx=20, pady=15, command=lambda: self.set_operator("+"))
         self.button_equal = Button(self.root, text="=", padx=21, pady=48, command=self.button_equal)
-        self.button_clear = Button(self.root, text="C", padx=20, pady=15, command=lambda x: x)
-        self.button_all_clear = Button(self.root, text="AC", padx=16, pady=15)
-        self.button_back = Button(self.root, text="<-", padx=19, pady=15)
+        self.button_clear = Button(self.root, text="C", padx=20, pady=15, command=lambda: self.clear(num='0'))
+        self.button_all_clear = Button(self.root, text="AC", padx=16, pady=15, command=lambda: self.clear_all(clear_all=True))
+        self.button_back = Button(self.root, text="<-", padx=19, pady=15, command=self.back)
 
         self.button_subtract = Button(self.root, text="-", padx=22, pady=15, command=lambda: self.set_operator("-"))
         self.button_multiply = Button(self.root, text="*", padx=21, pady=15, command=lambda: self.set_operator("*"))
         self.button_divide = Button(self.root, text="/", padx=22, pady=15, command=lambda: self.set_operator("/"))
         self.button_sqrt = Button(self.root, text="√", padx=21, pady=15, command=self.button_sqrt)
-        self.button_percent = Button(self.root, text="%", padx=20, pady=15)
-        self.button_decimal = Button(self.root, text=".", padx=22, pady=15)
+        self.button_percent = Button(self.root, text="%", padx=20, pady=15, command=lambda: self.set_operator("%"))
+        self.button_decimal = Button(self.root, text=".", padx=22, pady=15, command=self.set_decimal)
         self.button_change_sign = Button(self.root, text="+/-", padx=15.5, pady=15)
 
     def show_frame(self):
